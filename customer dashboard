@@ -1,0 +1,82 @@
+<%@ page import="java.sql.*" %>
+
+<%
+String username = (String) session.getAttribute("username");
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Repairs</title>
+
+<style>
+body {
+    background: #1e1e1e;
+    color: white;
+    font-family: Arial;
+}
+
+table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+th {
+    background: red;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">My Repair Status</h2>
+
+<table>
+<tr>
+    <th>Tracking #</th>
+    <th>Item</th>
+    <th>Status</th>
+    <th>Estimated Date</th>
+</tr>
+
+<%
+try {
+    Connection conn = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/nbj_repair", "root", "");
+
+    PreparedStatement ps = conn.prepareStatement(
+        "SELECT * FROM repairs WHERE username=?");
+
+    ps.setString(1, username);
+
+    ResultSet rs = ps.executeQuery();
+
+    while(rs.next()) {
+%>
+
+<tr>
+    <td><%= rs.getString("tracking_number") %></td>
+    <td><%= rs.getString("item") %></td>
+    <td><%= rs.getString("status") %></td>
+    <td><%= rs.getString("estimated_date") %></td>
+</tr>
+
+<%
+    }
+} catch(Exception e) {
+    e.printStackTrace();
+}
+%>
+
+</table>
+
+</body>
+</html>
