@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Repair</title>
+
+<style>
+body {
+    background: #1e1e1e;
+    color: white;
+    font-family: Arial;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: red;
+    border: none;
+    color: white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>Add Repair</h2>
+
+<form action="addRepair" method="post">
+    <input type="text" name="customerName" placeholder="Customer Name" required>
+    <input type="text" name="item" placeholder="Item" required>
+    <input type="date" name="dateReceived" required>
+    <input type="date" name="estimatedDate" required>
+
+    <button type="submit">Save</button>
+</form>
+
+</div>
+
+</body>
+</html>
