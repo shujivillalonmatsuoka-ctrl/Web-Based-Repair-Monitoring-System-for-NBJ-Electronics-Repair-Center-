@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Repair History</title>
+
+<style>
+body {
+    background: #1e1e1e;
+    color: white;
+    font-family: Arial;
+}
+
+table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+th {
+    background: red;
+}
+
+tr:hover {
+    background: #333;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Repair History</h2>
+
+<table>
+<tr>
+    <th>Tracking #</th>
+    <th>Customer</th>
+    <th>Item</th>
+    <th>Status</th>
+    <th>Estimated Date</th>
+</tr>
+
+<!-- DATA WILL COME FROM DATABASE -->
+
+</table>
+
+</body>
+</html>
